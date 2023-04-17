@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+
+
+
+.libros{
+    display: grid;
+    /* grid-template-columns: repeat(5,1fr) ; */
+    grid-template-columns: repeat(2,1fr) ;
+    padding: 20px;
+}
+.libro {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center; */
+    background-color: white;
+    width: 200px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    padding: 24px;
+    margin: 8px;
+    border-radius: 4px;
+    
+}
+.autor {
+    /* text-decoration: none; */
+    color: rgb(44, 43, 43);
+    /* font-weight: bold; */   
+}
+
+.titulo{
+    padding: 5px 5px 10px 5px;
+}
+
+.precio{
+    padding: 5px;
+}
+
+/*pseudoclases*/
+/*hover("helicoptero"): cuando el mouse se posiciona sobre esta card tengo un comportamiento diferente*/
+/* box-shadow: 10 10 16px rgb(0 0 0 / 80%); */
+.libro:hover {
+    background-color: rgb(248, 242, 158);
+    /* width: 250px;
+    text-align: center; */
+
+}
+
+/* .precio::after{
+    visibility: hidden;
+} */
+
+
+.libro img {
+    align-self: center;
+    width: 150px;
+    height: 250px;
+    /* object-fit: cover; */
+    border-radius: 4px;
+}
+
+/* .autores{
+    border: 2px solid black;
+    padding: 5px;
+} */
+
+/*media query*/
+/* @media(max-width: 600px) {
+    .libros{
+        grid-template-columns: repeat(2,1fr);
+    }
+    
+}
+
+@media(max-width: 900px) {
+    .libros{
+        grid-template-columns: repeat(3,1fr);
+    }
+    
+}
+
+@media(max-width: 1200px) {
+    .libros{
+        grid-template-columns: repeat(4,1fr);
+    }
+    
+} */
+
+@media(min-width:600px){ /*cuando mi pantalla tiene de 600px o más*/
+  .libros{
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media(min-width:900px){
+    .libros{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media(min-width:1200px){
+    .libros{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+
+/*hacer las media query con los 3 breakpoints para 3 tamaños de pantalla
+buscar en uno de los pdf las medidas*/
+
+/* .hide {
+    display: none;
+  }
+  
+  .verDetalle:hover + .hide {
+    display: block;
+    color: red;
+  } */
+
+
+/* #show {
+    display: none
+  }
+  #main:hover + #show {
+    display: block
+  }
+  #main:hover ~ #hide {
+    display: none
+  } */
+ 
+/* #show {
+    display:none;
+}
+#main:hover + #show {
+    display:block 
+}
+#main:hover + #show + #hide {
+    display:none
+} */
