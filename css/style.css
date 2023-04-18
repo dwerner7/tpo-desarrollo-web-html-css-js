@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+}
+
+ul{
+    display: flex; /*para que los elementos sean flexibles*/
+    justify-content: space-around;
+
+}
+
+li{
+    padding: 15px;
+    list-style-type: none;
+}
+
+.link{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: black;
+}
+.enlaces {
+    flex-direction: column;
+}
+nav{
+    height: auto;
+}
+
+.btn{
+    size: 36px;
+}
+.container{
+    display: grid;
+    gap:10px;
+    /* text-align: center; */
+    padding: 10px;
+    grid-template-areas: 
+    "header header" 
+    "navbar navbar" 
+    "main aside" 
+    "footer footer";
+}
+
+.header{
+    grid-area: header;
+}
+.navbar{
+    grid-area: navbar;
+}
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area:footer;
+}
+
+
+
+@media(min-width:600px){ /*cuando mi pantalla tiene de 600px o más*/
+    .grid-container{
+        grid-template-columns: 200px auto;
+        grid-template-rows:100px auto auto 100px;
+        /* grid-template-areas: 
+        "header header" 
+        "navbar navbar" 
+        "main aside"
+        "footer footer"; */
+    }
+    .enlaces{
+        flex-direction: row;
+
+    }
+}
+
+@media(min-width:900px){
+    .grid-container{
+        /* grid-template-columns: 200px 200px;
+        grid-template-rows:100px auto auto 100px;
+        grid-template-areas  */
+        grid-template: 
+        "header header header" 100px
+        "navbar main aside"  200px
+        "footer footer footer" 100px/
+        200px auto;
+    }
+}
