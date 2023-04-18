@@ -12,14 +12,24 @@ body{
     min-height: 100%;
 }
 
+.title{
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    animation: show 3s forwards;
+}
 
-
+.whatsapp-icon{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    
+}
 
 .libros{
     display: grid;
     /* grid-template-columns: repeat(5,1fr) ; */
     grid-template-columns: repeat(2,1fr) ;
     padding: 20px;
+    row-gap: 10px;
 }
 .libro {
     /* display: flex;
@@ -33,7 +43,34 @@ body{
     margin: 8px;
     border-radius: 4px;
     
+    /*hacen falta los 0s??*/
+    /* transition: background-color .5s, transform 0s;  */
+    transition: background-color .5s; 
+    /* transform-origin: center; */
+    
+    /* , flex-grow .5s; */
+
+    animation: librosGrow 1.5s;
 }
+
+/*pseudoclases*/
+/*hover("helicoptero"): cuando el mouse se posiciona sobre esta card tengo un comportamiento diferente*/
+/* box-shadow: 10 10 16px rgb(0 0 0 / 80%); */
+.libro:hover {
+    background-color: rgb(248, 242, 158);
+    transform: scale(110%,110%);
+
+    /* display: flex;
+    flex-direction: column;
+    flex-grow: 1; */
+    /* width: 250px;
+    text-align: center; */
+
+    
+}
+
+
+
 .autor {
     /* text-decoration: none; */
     color: rgb(44, 43, 43);
@@ -48,15 +85,6 @@ body{
     padding: 5px;
 }
 
-/*pseudoclases*/
-/*hover("helicoptero"): cuando el mouse se posiciona sobre esta card tengo un comportamiento diferente*/
-/* box-shadow: 10 10 16px rgb(0 0 0 / 80%); */
-.libro:hover {
-    background-color: rgb(248, 242, 158);
-    /* width: 250px;
-    text-align: center; */
-
-}
 
 /* .precio::after{
     visibility: hidden;
@@ -70,6 +98,8 @@ body{
     /* object-fit: cover; */
     border-radius: 4px;
 }
+
+
 
 /* .autores{
     border: 2px solid black;
@@ -98,6 +128,7 @@ body{
     
 } */
 
+/*hacer las media query con los 3 breakpoints para 3 tamaños de pantalla*/
 @media(min-width:600px){ /*cuando mi pantalla tiene de 600px o más*/
   .libros{
     grid-template-columns: repeat(3,1fr);
@@ -116,9 +147,28 @@ body{
     }
 }
 
-/*hacer las media query con los 3 breakpoints para 3 tamaños de pantalla
-buscar en uno de los pdf las medidas*/
+/*animaciones libros y titulo*/
 
+@keyframes librosGrow{
+    from{
+        transform: scale(.3);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+
+@keyframes show{
+    to{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+
+
+
+
+/***************************************************/
 /* .hide {
     display: none;
   }
@@ -129,13 +179,13 @@ buscar en uno de los pdf las medidas*/
   } */
 
 
-/* #show {
+ /* .show {
     display: none
   }
-  #main:hover + #show {
+  .libro:hover + .show {
     display: block
   }
-  #main:hover ~ #hide {
+  .libro:hover ~ .hide {
     display: none
   } */
  
